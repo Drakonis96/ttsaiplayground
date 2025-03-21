@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TTS AI Playground</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/images/logo.png" />
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <a href="#" id="logoLink">
+      <img src="/static/images/logo.png" alt="Logo" class="logo">
+    </a>
+    <h1>TTS AI Playground</h1>
+  </header>
+  
+  <!-- Navigation tabs -->
+  <nav>
+    <ul class="tabs">
+      <li class="tab active" data-target="tts-section">🎤 Text to Speech</li>
+      <li class="tab" data-target="history-section">📜 History</li>
+      <li class="tab" data-target="configs-section">⚙️ Configs</li>
+    </ul>
+  </nav>
+  
+  <main>
+    <!-- Text to Speech Section -->
+    <section id="tts-section" class="tab-content active">
+      <h2>Text to Speech</h2>
+      <!-- Nuevos enlaces justo debajo del título -->
+      <div class="extra-links">
+        <a class="btn-link" href="https://platform.openai.com/docs/guides/text-to-speech" target="_blank">OpenAI docs</a>
+        <a class="btn-link" href="https://www.openai.fm/" target="_blank">Demo</a>
+      </div>
+      
+      <section id="upload-section">
+        <h3>Upload or Enter Text</h3>
+        <div id="drop-area">
+          <p>Drag and drop your PDF or TXT files here</p>
+          <input type="file" id="fileInput" />
+        </div>
+        <textarea id="textInput" placeholder="Or type/paste your text here"></textarea>
+        <button id="countBtn">🔢 Count Characters</button>
+        <p id="charCount"></p>
+      </section>
+  
+      <section id="settings-section">
+        <h3>Voice and Model Settings</h3>
+        <!-- Status message / spinner -->
+        <p id="statusMessage" style="display:none; font-weight:bold;">Generating audio...</p>
+        
+        <label for="promptSelect">Prompt for the voice:</label>
+        <select id="promptSelect"></select>
+        
+        <label for="voiceSelect">Voice:</label>
+        <select id="voiceSelect"></select>
+        
+        <label for="modelSelect">Model:</label>
+        <select id="modelSelect"></select>
+        
+        <label for="outputFilename">Output file name (optional):</label>
+        <input type="text" id="outputFilename" placeholder="e.g., my_audio" />
+  
+        <div class="buttons-container">
+          <button id="generateAudioBtn">🎶 Generate Audio</button>
+        </div>
+      </section>
+  
+      <!-- Audio section -->
+      <section id="audio-section" style="display: none;">
+        <h3>Generated Audio</h3>
+        <audio id="audioPlayer" controls></audio>
+        <a id="downloadLink" href="#" download="">Download Audio</a>
+      </section>
+    </section>
+    
+    <!-- History Section -->
+    <section id="history-section" class="tab-content">
+      <h2>History 📜</h2>
+      <div id="historyContainer">
+        <!-- Generated audio history will be loaded here -->
+      </div>
+    </section>
+    
+    <!-- Configs Section -->
+    <section id="configs-section" class="tab-content">
+      <h2>Configs ⚙️</h2>
+      <div>
+        <h3>Save New Prompt</h3>
+        <input type="text" id="newPromptName" placeholder="Prompt name" />
+        <textarea id="newPromptContent" placeholder="Prompt content"></textarea>
+        <button id="savePromptBtn">💾 Save Prompt</button>
+      </div>
+      <div>
+        <h3>Save New Model</h3>
+        <input type="text" id="newModelName" placeholder="Model name" />
+        <input type="text" id="newModelContent" placeholder="Model content" />
+        <button id="saveModelBtn">💾 Save Model</button>
+      </div>
+      <button id="backupBtn">⬇️ Download Backup</button>
+      <!-- Backup upload option -->
+      <div>
+        <h3>Upload Backup</h3>
+        <input type="file" id="backupUploadInput" accept=".json" />
+        <button id="uploadBackupBtn">⬆️ Upload Backup</button>
+      </div>
+      <div id="savedItems">
+        <!-- Saved prompts and models will be displayed here -->
+      </div>
+    </section>
+  </main>
+  
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

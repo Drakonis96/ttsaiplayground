@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5029:5029"
+    environment:
+      - OPENAI_API_KEY=your_api_key

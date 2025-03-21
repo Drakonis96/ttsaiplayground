@@ -1,0 +1,217 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+header a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav {
+  background: #444;
+}
+
+nav ul.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul.tabs li.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+nav ul.tabs li.tab.active {
+  background: #666;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#drop-area {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#drop-area.highlight {
+  border-color: #666;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  padding: 10px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 5px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #555;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Estilo para el mensaje de status en naranja */
+#statusMessage {
+  color: orange;
+}
+
+/* Botón de descarga de texto en verde */
+.download-text-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.download-text-btn:hover {
+  background-color: #45a049;
+}
+
+/* Botón de descarga de audio en azul */
+.download-audio-btn {
+  background-color: #2196F3; /* Blue */
+  color: white;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.download-audio-btn:hover {
+  background-color: #0b7dda;
+}
+
+/* Botón de eliminar en rojo con emoji de papelera */
+.item-delete-btn {
+  margin-left: 10px;
+  background: red;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.item-delete-btn:hover {
+  background: #cc0000;
+}
+
+/* Estilos para los nuevos botones de enlace */
+.extra-links {
+  margin-bottom: 15px;
+}
+.btn-link {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 10px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn-link:hover {
+  background: #555;
+}
+
+.saved-items-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.saved-items-container ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.saved-items-container ul li .item-left {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.saved-items-container ul li .item-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  header, main {
+    padding: 10px;
+  }
+  .buttons-container {
+    flex-direction: column;
+  }
+  .saved-items-container ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .saved-items-container ul li .item-right {
+    margin-top: 5px;
+  }
+}
